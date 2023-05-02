@@ -1,12 +1,12 @@
-/* eslint-disable */ import React from 'react';
-import NavigationBar from '../components/NavigationBar';
+/* eslint-disable */ import React from "react";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
-    return (
-        <div>
-            <NavigationBar></NavigationBar>
-        </div>
-    );
+  return (
+    <>
+      <Banner></Banner>
+    </>
+  );
 };
 
 export default Home;
