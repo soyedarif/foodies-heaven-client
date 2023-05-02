@@ -14,12 +14,12 @@ const NavigationBar = () => {
           <ul className="menu menu-compact gap-5 text-white dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
             <li>
               <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-                Item-1
+                Home
               </NavLink>
             </li>
             <li>
               <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-                Item-1
+                Blog
               </NavLink>
             </li>
            
@@ -32,12 +32,12 @@ const NavigationBar = () => {
         <ul className="menu gap-5 menu-horizontal text-white px-1">
           <li>
             <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-              Item 1
+              Home
             </NavLink>
           </li>
           <li>
-            <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
-              Item 1
+            <NavLink to="/blog" className={({ isActive }) => (isActive ? "active" : "")}>
+              Blog
             </NavLink>
           </li>
          

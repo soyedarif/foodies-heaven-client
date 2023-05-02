@@ -7,7 +7,12 @@ export default {
       FontPoppins: ["Poppins", "sans-serif"],
     },
     
-    extend: {},
+    extend: {
+      colors: {
+        'Shade': '#333',
+        'Shade1': '#555',
+      }
+    },
   },
   daisyui: {
     themes: [
@@ -28,7 +33,7 @@ export default {
         
 "success": "#108E79",
         
-"warning": "#B2960A",
+"warning": "#FFC107",
         
 "error": "#EE6D89",
         },

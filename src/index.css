@@ -4,6 +4,13 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
+.section-title{
+    @apply text-4xl mb-4 text-Shade font-semibold
+}
+.section-description{
+    @apply text-Shade1 mb-6
+}
+
 .active{
     color:#100F0F
 }
