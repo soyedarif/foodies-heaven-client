@@ -2,15 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
-.section-title{
-    @apply text-4xl mb-4 text-Shade font-semibold
+.section-title {
+  @apply text-4xl mb-4 text-Shade font-semibold;
 }
-.section-description{
-    @apply text-Shade1 mb-6
+.chef-title {
+  @apply text-4xl mb-4 text-white font-semibold;
+}
+.section-description {
+  @apply text-Shade1 mb-6;
 }
 
-.active{
-    color:#100F0F
+.active {
+  color: #100f0f;
+}
+.rest {
+    background-image: linear-gradient(rgba(34,34, 34, 0.6),rgba(0, 0, 0, 0.6)),url('./assets/hero.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
 }

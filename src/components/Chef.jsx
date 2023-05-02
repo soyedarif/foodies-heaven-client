@@ -3,7 +3,6 @@ import { FaThumbsUp, FaCalendarAlt, FaHamburger } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Chef = ({ chef }) => {
-  console.log(chef);
   const { id, likes, chefPhoto, bio, chefName, yearsOfExperience } = chef;
   return (
     <div className="card card-side h-96 bg-base-100 shadow-xl">
@@ -22,7 +21,7 @@ const Chef = ({ chef }) => {
           <FaThumbsUp /> Likes: {likes}
         </p>
         <div className="mt-auto">
-          <Link to={`/recipies/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
+          <Link to={`/recipes/${id}`}><button className="btn btn-primary">View Recipes</button></Link>
         </div>
       </div>
     </div>

@@ -8,10 +8,9 @@ const router = createBrowserRouter([
         element: <Home></Home>
     },
     {
-        path: '/recipies/:id',
+        path: '/recipes/:resId',
         element: <Recipes></Recipes>,
-        loader: ({params})=>fetch(`https://foodies-heaven-server-soyedarif.vercel.app/recipies/${params.id}`)
-
+        loader: ({params})=>fetch(`https://foodies-heaven-server-soyedarif.vercel.app/recipies/${params.resId}`)
     }
 ])
 
