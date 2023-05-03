@@ -1,7 +1,9 @@
-/* eslint-disable */ import React from "react";
-import { NavLink } from "react-router-dom";
+/* eslint-disable */ import React, { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const NavigationBar = () => {
+  const { user } = useContext(AuthContext);
   return (
     <div className="navbar rounded-lg container pt-12 pb-6 mx-auto ">
       <div className="navbar-start">
@@ -22,8 +24,6 @@ const NavigationBar = () => {
                 Blog
               </NavLink>
             </li>
-           
-            
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-white text-xl">FoodiesHeaven</a>
@@ -40,8 +40,6 @@ const NavigationBar = () => {
               Blog
             </NavLink>
           </li>
-         
-         
         </ul>
       </div>
       <div className="navbar-end">
@@ -49,7 +47,7 @@ const NavigationBar = () => {
           <div className="w-10 mr-4 rounded-full">
             <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
-          <button className="btn btn-outline btn-warning">Logout</button>
+          {user ? <button className="btn btn-outline btn-warning">Logout</button> : <Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link>}
         </label>
       </div>
     </div>
