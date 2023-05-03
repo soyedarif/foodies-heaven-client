@@ -20,7 +20,7 @@ const Recipes = () => {
   return (
     <div className="rest">
       <NavigationBar></NavigationBar>
-      <div className="container mx-auto lg:grid grid-cols-3">
+      <div className="container mx-auto lg:grid gap-6 grid-cols-3">
         <div className="glass rounded-xl col-span-1 flex flex-col items-center text-white p-8">
           <h2 className="chef-title ">Chef Info</h2>
           <figure className="w-full  mb-8">
