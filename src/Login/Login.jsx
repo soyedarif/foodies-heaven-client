@@ -2,13 +2,25 @@ import React, { useContext, useState } from "react";
 import NavigationBar from "../components/NavigationBar";
 import { Link,useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Login = () => {
-  const {login}=useContext(AuthContext)
+  const {login,googleLogin}=useContext(AuthContext)
   const navigate = useNavigate();
   const location= useLocation();
   const from=location?.state?.from?.pathname || '/'
   const [error,setError]=useState('')
+
+  const handleGoogleLogin=()=>{
+    console.log('kire');
+    googleLogin()
+    .then(result=>{
+      const loggedUser=result.user;
+      console.log(loggedUser);
+    }).catch(error=>{
+      setError(error)
+    })
+  }
 
   const handleLogin=e=>{
     e.preventDefault()
@@ -29,7 +41,7 @@ const Login = () => {
         </div>
             <h2 className="section-title text-center">Please Login</h2>
       <div className="mb-32">
-          <form onSubmit={handleLogin} className="w-1/3 mx-auto">
+          <form onSubmit={handleLogin} className="w-1/3 mb-8 mx-auto">
             
             
             <div className="flex mb-6 items-center justify-between">
@@ -45,6 +57,10 @@ const Login = () => {
             <div className='flex justify-center'><button className="btn btn-wide bg-primary text-Shade border-0 hover:text-white">Login</button></div>
             <p className="text-error mt-4">{error}</p>
           </form>
+          <div className="flex flex-col items-center gap-4">
+            <button onClick={handleGoogleLogin} className="btn btn-success"><FaGoogle/> <span className="ml-4">Google Login</span></button>
+            <button className="btn btn-accent"><FaGithub/> <span className="ml-4">GitHub Login</span></button>
+          </div>
       </div>
         </>
   );

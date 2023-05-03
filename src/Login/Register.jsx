@@ -1,7 +1,9 @@
 import React, { useContext, useState } from "react";
 import NavigationBar from "../components/NavigationBar";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
+
+
 
 const Register = () => {
   const {createUser,updateUser}=useContext(AuthContext)
@@ -53,7 +55,7 @@ const Register = () => {
       </div>
       <h2 className="section-title text-center">Please Register</h2>
       <div className="mb-32">
-        <form onSubmit={handleRegister} className="w-1/3 mx-auto">
+        <form onSubmit={handleRegister} className="w-1/3 mb-8 mx-auto">
           <div className="flex mb-6 items-center justify-between">
             <label htmlFor="displayName">Your Name</label>
             <input required type="text" placeholder="Your Name" id="displayName" name="displayName" className="input input-bordered w-full max-w-xs" />
@@ -87,6 +89,7 @@ const Register = () => {
           <p className="text-success mt-4 text-center">{success}</p>
 
         </form>
+        
       </div>
     </>
   );

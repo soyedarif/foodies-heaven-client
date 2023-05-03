@@ -20,7 +20,7 @@ const NavigationBar = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/" className={({ isActive }) => (isActive ? "active" : "")}>
+              <NavLink to="/blog" className={({ isActive }) => (isActive ? "active" : "")}>
                 Blog
               </NavLink>
             </li>
