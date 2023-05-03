@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Register = () => {
-  const {createUser}=useContext(AuthContext)
+  const {createUser,updateUser}=useContext(AuthContext)
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
@@ -36,10 +36,15 @@ const Register = () => {
     .then(result=>{
      const newUser=result.user
      console.log(newUser);
+     updateUser(displayName,photoURL)
+     e.target.reset();
+     setSuccess("User has been created succesfully");
     }).catch(error=>{
       console.log(error);
     })
   };
+
+
 
   return (
     <>
@@ -51,11 +56,11 @@ const Register = () => {
         <form onSubmit={handleRegister} className="w-1/3 mx-auto">
           <div className="flex mb-6 items-center justify-between">
             <label htmlFor="displayName">Your Name</label>
-            <input type="text" placeholder="Your Name" id="displayName" name="displayName" className="input input-bordered w-full max-w-xs" />
+            <input required type="text" placeholder="Your Name" id="displayName" name="displayName" className="input input-bordered w-full max-w-xs" />
           </div>
           <div className="flex mb-6 items-center justify-between">
             <label htmlFor="photoURL">Photo Url</label>
-            <input type="text" placeholder="Photo URL" id="photoURL" name="photoURL" className="input input-bordered w-full max-w-xs" />
+            <input required type="text" placeholder="Photo URL" id="photoURL" name="photoURL" className="input input-bordered w-full max-w-xs" />
           </div>
           <div className="flex mb-6 items-center justify-between">
             <label htmlFor="email">Email</label>
@@ -78,6 +83,9 @@ const Register = () => {
           <div className="flex justify-center">
             <button className="btn btn-wide bg-primary text-Shade border-0 hover:text-white">Register</button>
           </div>
+          <p className="text-error ">{error}</p>
+          <p className="text-success mt-4 text-center">{success}</p>
+
         </form>
       </div>
     </>

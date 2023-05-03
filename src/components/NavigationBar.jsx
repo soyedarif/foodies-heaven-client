@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const NavigationBar = () => {
-  const { user } = useContext(AuthContext);
+  const { user ,logOut} = useContext(AuthContext);
   return (
     <div className="navbar rounded-lg container pt-12 pb-6 mx-auto ">
       <div className="navbar-start">
@@ -44,10 +44,10 @@ const NavigationBar = () => {
       </div>
       <div className="navbar-end">
         <label className="avatar">
-          <div className="w-10 mr-4 rounded-full">
-            <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          <div className="w-12 mr-4 rounded-full">
+          <img src={user? user?.photoURL: `https://icon-library.com/images/no-user-image-icon/no-user-image-icon-0.jpg`} title={user?.displayName} />
           </div>
-          {user ? <button className="btn btn-outline btn-warning">Logout</button> : <Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link>}
+          {user ? <button onClick={logOut} className="btn btn-outline btn-warning">Logout</button> : <Link to='/login'><button className="btn btn-outline btn-warning">Login</button></Link>}
         </label>
       </div>
     </div>

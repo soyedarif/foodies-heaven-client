@@ -3,6 +3,9 @@ import NavigationBar from "../components/NavigationBar";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const handleLogin=e=>{
+    e.preventDefault()
+  }
   return (
     <>
         <div className='bg-black mb-12'>
@@ -10,7 +13,7 @@ const Login = () => {
         </div>
             <h2 className="section-title text-center">Please Login</h2>
       <div className="mb-32">
-          <form className="w-1/3 mx-auto">
+          <form onSubmit={handleLogin} className="w-1/3 mx-auto">
             
             
             <div className="flex mb-6 items-center justify-between">
