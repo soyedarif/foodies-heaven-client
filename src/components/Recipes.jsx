@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import Recipe from "./Recipe";
+import { FaCalendarAlt, FaHamburger, FaThumbsUp } from "react-icons/fa";
 
 const Recipes = () => {
   const { resId } = useParams();
@@ -27,7 +28,18 @@ const Recipes = () => {
             <img className="h-80  mx-auto" src={chefPhoto} alt="Movie" />
           </figure>
           <h3 className="text-2xl mb-4 font-semibold">{chefName}</h3>
-          <p>{bio}</p>
+          <p className="mb-6">{bio}</p>
+          <div>
+          <p className="flex gap-2 mb-4 items-center">
+          <FaCalendarAlt /> Years Of Experience: {yearsOfExperience}
+        </p>
+        <p className="flex gap-2 mb-4 items-center">
+          <FaHamburger /> Numbers of recipes: 3
+        </p>
+        <p className="flex gap-2 items-center">
+          <FaThumbsUp /> Likes: {likes}
+        </p>
+          </div>
         </div>
         <div className="lg:col-span-2">
             {

@@ -8,10 +8,10 @@ const Recipe = ({ recipe }) => {
   console.log(rating);
   return (
     <div className="glass mb-9 rounded-lg flex gap-5 text-white p-6">
-      <figure>
+      <figure className="w-1/3">
         <img className="w-96" src={photoUrl} alt="Movie" />
       </figure>
-      <div>
+      <div className="w-2/3">
         <h1 className="font-bold mb-2 text-4xl">{recipeName}</h1>
         <p className="mb-4">{cookingMethod}</p>
         <ol className="list-decimal mb-6 ml-6">
