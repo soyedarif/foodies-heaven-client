@@ -8,6 +8,7 @@ const Recipes = () => {
   const { resId } = useParams();
   const [chefData, setChefData] = useState({});
   const { id, likes, chefPhoto, bio, chefName, yearsOfExperience } = chefData;
+  
   const recipeData = useLoaderData();
   useEffect(() => {
     fetch(`https://foodies-heaven-server-soyedarif.vercel.app/chefs`)

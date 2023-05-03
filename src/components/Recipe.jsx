@@ -5,7 +5,6 @@ import "@smastrom/react-rating/style.css";
 
 const Recipe = ({ recipe }) => {
   const { cookingMethod, ingredients, photoUrl, recipeName, rating } = recipe;
-  console.log(rating);
   return (
     <div className="glass mb-9 rounded-lg flex gap-5 text-white p-6">
       <figure className="w-1/3">

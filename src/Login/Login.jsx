@@ -1,25 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import NavigationBar from "../components/NavigationBar";
-import { Link,useNavigate } from "react-router-dom";
+import { Link,useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 
 const Login = () => {
   const {login}=useContext(AuthContext)
   const navigate = useNavigate();
+  const location= useLocation();
+  const from=location?.state?.from?.pathname || '/'
+  const [error,setError]=useState('')
+
   const handleLogin=e=>{
     e.preventDefault()
+    setError('')
     const form=e.target;
     const email=form.email.value
     const password=form.password.value
     login(email,password)
     .then(result=>{
       const loggedUser=result.user;
-      navigate('/')
-    }).catch(error=>console.log(error))
+      navigate(from, {replace:true})
+    }).catch(error=>setError(error.message))
   }
   return (
     <>
-        <div className='bg-black mb-12'>
+        <div className='bg-Shade1 mb-12'>
             <NavigationBar></NavigationBar>
         </div>
             <h2 className="section-title text-center">Please Login</h2>
@@ -38,6 +43,7 @@ const Login = () => {
             
             <p className='mb-6'>New to this Site? <Link className='text-blue-500' to="/register">Register</Link></p>
             <div className='flex justify-center'><button className="btn btn-wide bg-primary text-Shade border-0 hover:text-white">Login</button></div>
+            <p className="text-error mt-4">{error}</p>
           </form>
       </div>
         </>

@@ -48,7 +48,7 @@ const Register = () => {
 
   return (
     <>
-      <div className="bg-black mb-12">
+      <div className="bg-Shade1 mb-12">
         <NavigationBar></NavigationBar>
       </div>
       <h2 className="section-title text-center">Please Register</h2>
@@ -83,7 +83,7 @@ const Register = () => {
           <div className="flex justify-center">
             <button className="btn btn-wide bg-primary text-Shade border-0 hover:text-white">Register</button>
           </div>
-          <p className="text-error ">{error}</p>
+          <p className="text-error mt-4">{error}</p>
           <p className="text-success mt-4 text-center">{success}</p>
 
         </form>
