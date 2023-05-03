@@ -10,10 +10,9 @@ const firebaseConfig = {
   projectId: "foodies-heaven-auth",
   storageBucket: "foodies-heaven-auth.appspot.com",
   messagingSenderId: "721804145773",
-  appId: "1:721804145773:web:58ffd3969067ea4542fb64"
+  appId: "1:721804145773:web:58ffd3969067ea4542fb64",
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
 export default app;
