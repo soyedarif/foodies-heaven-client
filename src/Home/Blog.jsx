@@ -1,8 +1,18 @@
 import React from "react";
 import NavigationBar from "../components/NavigationBar";
 import { FaFilePdf } from "react-icons/fa";
+import { jsPDF } from "jspdf";
 
 const Blog = () => {
+    const handleDownloadPdf = () => {
+        const doc = new jsPDF("p", "mm", "a4");
+        const content = document.getElementById("blog-content");
+        doc.html(content, {
+          callback: function (pdf) {
+            pdf.save("blog.pdf");
+          },
+        });
+      };
     
   return (
     <>
@@ -12,7 +22,7 @@ const Blog = () => {
       <div>
         <h1 className="section-title text-center">Blog</h1>
         <div className="flex justify-center items-center">
-          <button title="Download PDF" className="flex flex-col items-center hover:text-blue-500">
+          <button title="Download PDF" onClick={handleDownloadPdf} className="flex flex-col items-center hover:text-blue-500">
             <FaFilePdf className="text-red-600 text-4xl"/>Download PDF
           </button>
         </div>
