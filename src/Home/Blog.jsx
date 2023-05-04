@@ -3,6 +3,7 @@ import NavigationBar from "../components/NavigationBar";
 import { FaFilePdf } from "react-icons/fa";
 
 const Blog = () => {
+    
   return (
     <>
       <div className="bg-Shade1 mb-12">

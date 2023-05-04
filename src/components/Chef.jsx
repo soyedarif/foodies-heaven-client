@@ -3,14 +3,16 @@ import { FaThumbsUp, FaCalendarAlt, FaHamburger } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import Loading from './Loading';
+import Loading from "./Loading";
+
 
 const Chef = ({ chef }) => {
   const { id, likes, chefPhoto, bio, chefName, yearsOfExperience } = chef;
   const {loading}=useContext(AuthContext)
-    if(loading){
-        return <Loading></Loading>
-    }
+  if(loading){
+      return <Loading></Loading>
+  }
+ 
   return (
     <div className="card card-side h-96 bg-base-100 shadow-xl">
       <figure className="w-1/2">

@@ -26,7 +26,7 @@ const NavigationBar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-white text-xl">FoodiesHeaven</a>
+        <Link to='/' className="btn btn-ghost normal-case text-white text-xl">FoodiesHeaven</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu gap-5 menu-horizontal text-white px-1">

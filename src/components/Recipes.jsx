@@ -28,7 +28,6 @@ const Recipes = () => {
       });
   };
   
-  console.log(fav);
   
   const recipeData = useLoaderData();
   useEffect(() => {
