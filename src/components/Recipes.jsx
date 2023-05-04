@@ -3,11 +3,32 @@ import { useLoaderData, useParams } from "react-router-dom";
 import NavigationBar from "./NavigationBar";
 import Recipe from "./Recipe";
 import { FaCalendarAlt, FaHamburger, FaThumbsUp } from "react-icons/fa";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 const Recipes = () => {
   const { resId } = useParams();
   const [chefData, setChefData] = useState({});
   const { id, likes, chefPhoto, bio, chefName, yearsOfExperience } = chefData;
+  const [fav, setFav] = useState([]);
+
+  const handleFav = (id) => {
+    setFav([...fav, id]);
+    toast.success('Added To Favourite!', {
+      position: "top-center",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+      });
+  };
+  
+  console.log(fav);
   
   const recipeData = useLoaderData();
   useEffect(() => {
@@ -43,10 +64,12 @@ const Recipes = () => {
         </div>
         <div className="lg:col-span-2">
             {
-                recipeData.map(recipe=><Recipe key={recipe.id} recipe={recipe}></Recipe>)
+                recipeData.map(recipe=><Recipe key={recipe.id} fav={fav} handleFav={handleFav} recipe={recipe}></Recipe>)
             }
         </div>
       </div>
+      <ToastContainer />
+
     </div>
   );
 };
