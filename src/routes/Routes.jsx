@@ -12,7 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
-    errorElement:<ErrorPage/>,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -22,24 +22,24 @@ const router = createBrowserRouter([
         path: "/blog",
         element: <Blog></Blog>,
       },
+      {
+        path: "/recipes/:resId",
+        element: (
+          <PrivateRouter>
+            <Recipes></Recipes>
+          </PrivateRouter>
+        ),
+        loader: ({ params }) => fetch(`https://foodies-heaven-server-soyedarif.vercel.app/recipies/${params.resId}`),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
     ],
-  },
-  {
-    path: "/recipes/:resId",
-    element: (
-      <PrivateRouter>
-        <Recipes></Recipes>
-      </PrivateRouter>
-    ),
-    loader: ({ params }) => fetch(`https://foodies-heaven-server-soyedarif.vercel.app/recipies/${params.resId}`),
-  },
-  {
-    path: "/login",
-    element: <Login></Login>,
-  },
-  {
-    path: "/register",
-    element: <Register></Register>,
   },
 ]);
 
