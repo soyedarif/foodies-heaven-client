@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
@@ -8,37 +9,36 @@ const Footer = () => {
                 <img src="./images/cup.png" alt=""/>
             </div>
             <div className="w-full col-span-1 md:col-span-2">
-                <p className="">Ready to get strated? <a href="#"
-                        className="px-5 text-white rounded-lg py-4 bg-gradient-to-r from-yellow to-yellow2">Get Started</a>
+                <p className="">Ready to get strated? <Link to='/register'
+                        className="px-5 text-primary cursor-pointer rounded-lg py-4 bg-gradient-to-r from-yellow to-yellow2">Register</Link>
                 </p>
             </div>
             <div className="w-full ">
-                <h5 className="text-black text-xl font-semibold">Quick Links</h5>
+                <h5 className="text-primary text-xl font-semibold">Quick Links</h5>
                 <ul>
                     <li className="text-grey text-base">Home</li>
                     <li className="text-grey text-base">About Us</li>
-                    <li className="text-grey text-base">Insurance</li>
                     <li className="text-grey text-base">Privacy Policy</li>
                 </ul>
             </div>
             <div className="w-full">
-                <h5 className="text-black text-xl font-semibold">Our Sevices</h5>
+                <h5 className="text-primary text-xl font-semibold">Our Sevices</h5>
                 <ul>
-                    <li className="text-grey text-base">Life Insurance</li>
-                    <li className="text-grey text-base">Car Insurance</li>
-                    <li className="text-grey text-base">Health Insurance</li>
-                    <li className="text-grey text-base">House Insurance</li>
+                    <li className="text-grey text-base">Customised Recipe</li>
+                    <li className="text-grey text-base">Wide Range Of Options</li>
+                    <li className="text-grey text-base">VEG and NON-VEG Menu</li>
+                    <li className="text-grey text-base">Home Delivery</li>
                 </ul>
             </div>
             <div className="w-full">
-                <h5 className="text-black text-xl font-semibold">Help</h5>
+                <h5 className="text-primary text-xl font-semibold">Help</h5>
                 <ul>
                     <li className="text-grey text-base">Faqs</li>
                     <li className="text-grey text-base">Contact Us</li>
                 </ul>
             </div>
             <div className="w-full">
-                <h4 className="text-2xl font-semibold text-black">Subscribe to our newsletter</h4>
+                <h4 className="text-2xl font-semibold text-primary">Subscribe to our newsletter</h4>
                 <div className="flex items-center">
                     <input className="bg-inherit outline-none border-grey border-b-2" type="email"
                         placeholder="Email address"/><button>

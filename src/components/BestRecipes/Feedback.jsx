@@ -11,15 +11,19 @@ const Feedback = () => {
         </p>
       </div>
       <div className="flex justify-center items-center">
-      <form className="w-1/3 mb-8 mx-auto">
+      <form action="" method="send" className="w-1/3 mb-8 mx-auto">
             
             
+            <div className="flex mb-6 items-center justify-between">
+              <label htmlFor="name">Name</label>
+              <input type="text" placeholder="Your Name" id="name" name="name" className="input input-bordered w-full max-w-xs" required />
+            </div>
             <div className="flex mb-6 items-center justify-between">
               <label htmlFor="email">Email</label>
               <input type="text" placeholder="Your Email" id="email" name="email" className="input input-bordered w-full max-w-xs" required />
             </div>
             <div className="flex mb-6 items-center justify-between">
-              <label htmlFor="textArea">Password</label>
+              <label htmlFor="textArea">Your Feedback</label>
               <textarea placeholder="Your Message" id="textArea" className="textarea textarea-bordered textarea-lg w-full max-w-xs" ></textarea>
             </div >
             <div className='flex justify-center'><button className="btn btn-wide bg-primary text-Shade border-0 hover:text-white">Submit</button></div>
