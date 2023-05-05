@@ -4,15 +4,28 @@ import { FaFilePdf } from "react-icons/fa";
 import { jsPDF } from "jspdf";
 
 const Blog = () => {
-    const handleDownloadPdf = () => {
-        const doc = new jsPDF("p", "mm", "a4");
-        const content = document.getElementById("blog-content");
-        doc.html(content, {
-          callback: function (pdf) {
-            pdf.save("blog.pdf");
-          },
-        });
-      };
+  const handleDownloadPdf = () => {
+    const content = document.getElementById("blog-content");
+    const options = {
+      format: "a4",
+      orientation: "portrait",
+      unit: "mm",
+      putOnlyUsedFonts: true,
+      floatPrecision: 16,
+      marginLeft: 5,
+      marginRight: 5,
+      marginBottom: 5,
+      marginTop: 5,
+      pagesplit: true
+    };
+    const doc = new jsPDF(options);
+    doc.html(content, {
+      callback: function (pdf) {
+        pdf.save("blog.pdf");
+      },
+    });
+  };
+  
     
   return (
     <>
